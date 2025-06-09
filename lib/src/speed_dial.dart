@@ -562,6 +562,7 @@ class _ChildrensOverlay extends StatelessWidget {
             labelBackgroundColor: child.labelBackgroundColor,
             labelPadding: child.labelPadding,
             labelElevation: child.labelElevation,
+            labelSplashColor: child.labelSplashColor,
             labelWidget: child.labelWidget,
             labelShadow: child.labelShadow,
             onTap: child.onTap,

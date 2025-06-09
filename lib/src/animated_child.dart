@@ -15,6 +15,7 @@ class AnimatedChild extends AnimatedWidget {
   final Color? labelBackgroundColor;
   final EdgeInsets labelPadding;
   final double? labelElevation;
+  final Color? labelSplashColor;
   final Widget? labelWidget;
 
   final bool visible;
@@ -46,6 +47,7 @@ class AnimatedChild extends AnimatedWidget {
     this.labelBackgroundColor,
     required this.labelPadding,
     this.labelElevation,
+    this.labelSplashColor,
     this.labelWidget,
     this.visible = true,
     this.onTap,
@@ -97,6 +99,7 @@ class AnimatedChild extends AnimatedWidget {
           elevation: labelElevation ?? 0,
           child: InkWell(
             onTap: performAction,
+            splashColor: labelSplashColor,
             onLongPress: onLongPress == null ? null : () => performAction(true),
             child: Padding(
               padding: labelPadding,
