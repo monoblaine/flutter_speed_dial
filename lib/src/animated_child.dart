@@ -16,6 +16,7 @@ class AnimatedChild extends AnimatedWidget {
   final EdgeInsets labelPadding;
   final double? labelElevation;
   final Color? labelSplashColor;
+  final BorderRadius labelBorderRadius;
   final Widget? labelWidget;
 
   final bool visible;
@@ -48,6 +49,7 @@ class AnimatedChild extends AnimatedWidget {
     required this.labelPadding,
     this.labelElevation,
     this.labelSplashColor,
+    BorderRadius? labelBorderRadius,
     this.labelWidget,
     this.visible = true,
     this.onTap,
@@ -60,7 +62,9 @@ class AnimatedChild extends AnimatedWidget {
     this.heroTag,
     required this.childMargin,
     required this.childPadding,
-  }) : super(key: key, listenable: animation);
+  })  : labelBorderRadius =
+            labelBorderRadius ?? const BorderRadius.all(Radius.circular(6.0)),
+        super(key: key, listenable: animation);
 
   @override
   Widget build(BuildContext context) {
@@ -87,14 +91,13 @@ class AnimatedChild extends AnimatedWidget {
         );
       }
 
-      const borderRadius = BorderRadius.all(Radius.circular(6.0));
       return Padding(
         padding: childMargin,
         child: Material(
           // type: MaterialType.transparency,
           color: labelBackgroundColor ??
               (dark ? Colors.grey[800] : Colors.grey[50]),
-          borderRadius: borderRadius,
+          borderRadius: labelBorderRadius,
           clipBehavior: Clip.hardEdge,
           elevation: labelElevation ?? 0,
           child: InkWell(
