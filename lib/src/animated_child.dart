@@ -88,35 +88,19 @@ class AnimatedChild extends AnimatedWidget {
       const borderRadius = BorderRadius.all(Radius.circular(6.0));
       return Padding(
         padding: childMargin,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: labelBackgroundColor ??
-                (dark ? Colors.grey[800] : Colors.grey[50]),
-            borderRadius: borderRadius,
-            boxShadow: labelShadow ??
-                [
-                  BoxShadow(
-                    color: dark
-                        ? Colors.grey[900]!.withOpacity(0.7)
-                        : Colors.grey.withOpacity(0.7),
-                    offset: const Offset(0.8, 0.8),
-                    blurRadius: 2.4,
-                  ),
-                ],
-          ),
-          child: Material(
-            type: MaterialType.transparency,
-            borderRadius: borderRadius,
-            clipBehavior: Clip.hardEdge,
-            elevation: labelElevation ?? 0,
-            child: InkWell(
-              onTap: performAction,
-              onLongPress:
-                  onLongPress == null ? null : () => performAction(true),
-              child: Padding(
-                padding: labelPadding,
-                child: Text(label!, style: labelStyle),
-              ),
+        child: Material(
+          // type: MaterialType.transparency,
+          color: labelBackgroundColor ??
+              (dark ? Colors.grey[800] : Colors.grey[50]),
+          borderRadius: borderRadius,
+          clipBehavior: Clip.hardEdge,
+          elevation: labelElevation ?? 0,
+          child: InkWell(
+            onTap: performAction,
+            onLongPress: onLongPress == null ? null : () => performAction(true),
+            child: Padding(
+              padding: labelPadding,
+              child: Text(label!, style: labelStyle),
             ),
           ),
         ),
