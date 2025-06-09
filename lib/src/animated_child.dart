@@ -13,6 +13,7 @@ class AnimatedChild extends AnimatedWidget {
   final String? label;
   final TextStyle? labelStyle;
   final Color? labelBackgroundColor;
+  final EdgeInsets labelPadding;
   final Widget? labelWidget;
 
   final bool visible;
@@ -42,6 +43,7 @@ class AnimatedChild extends AnimatedWidget {
     this.labelStyle,
     this.labelShadow,
     this.labelBackgroundColor,
+    required this.labelPadding,
     this.labelWidget,
     this.visible = true,
     this.onTap,
@@ -109,10 +111,7 @@ class AnimatedChild extends AnimatedWidget {
               onLongPress:
                   onLongPress == null ? null : () => performAction(true),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 5.0,
-                  horizontal: 8.0,
-                ),
+                padding: labelPadding,
                 child: Text(label!, style: labelStyle),
               ),
             ),

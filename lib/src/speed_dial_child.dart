@@ -17,6 +17,9 @@ class SpeedDialChild {
   /// The background color of the label
   final Color? labelBackgroundColor;
 
+  /// Label padding
+  final EdgeInsets labelPadding;
+
   /// If this is provided it will replace the default widget, therefore [label],
   /// [labelStyle] and [labelBackgroundColor] should be null
   final Widget? labelWidget;
@@ -50,6 +53,10 @@ class SpeedDialChild {
     this.label,
     this.labelStyle,
     this.labelBackgroundColor,
+    this.labelPadding = const EdgeInsets.symmetric(
+      vertical: 5.0,
+      horizontal: 8.0,
+    ),
     this.labelWidget,
     this.labelShadow,
     this.child,
