@@ -14,6 +14,7 @@ class AnimatedChild extends AnimatedWidget {
   final TextStyle? labelStyle;
   final Color? labelBackgroundColor;
   final EdgeInsets labelPadding;
+  final double? labelElevation;
   final Widget? labelWidget;
 
   final bool visible;
@@ -44,6 +45,7 @@ class AnimatedChild extends AnimatedWidget {
     this.labelShadow,
     this.labelBackgroundColor,
     required this.labelPadding,
+    this.labelElevation,
     this.labelWidget,
     this.visible = true,
     this.onTap,
@@ -106,6 +108,7 @@ class AnimatedChild extends AnimatedWidget {
             type: MaterialType.transparency,
             borderRadius: borderRadius,
             clipBehavior: Clip.hardEdge,
+            elevation: labelElevation ?? 0,
             child: InkWell(
               onTap: performAction,
               onLongPress:

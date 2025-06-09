@@ -20,6 +20,9 @@ class SpeedDialChild {
   /// Label padding
   final EdgeInsets labelPadding;
 
+  /// Label Material elevation
+  final double? labelElevation;
+
   /// If this is provided it will replace the default widget, therefore [label],
   /// [labelStyle] and [labelBackgroundColor] should be null
   final Widget? labelWidget;
@@ -57,6 +60,7 @@ class SpeedDialChild {
       vertical: 5.0,
       horizontal: 8.0,
     ),
+    this.labelElevation,
     this.labelWidget,
     this.labelShadow,
     this.child,
